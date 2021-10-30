@@ -30,6 +30,5 @@ jobs:
           context: .
           push: true
           tags: ghcr.io/airgproducts/hipsycl:latest
-          push: false
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
