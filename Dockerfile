@@ -3,7 +3,7 @@ RUN useradd user
 WORKDIR /home/user
 
 RUN pacman -Sy
-RUN pacman -S --noconfirm pacman clang llvm git cuda cmake boost --cachedir /tmp && pacman -Scc --noconfirm
+RUN pacman -S --noconfirm base-devel clang llvm git cuda cmake boost --cachedir /tmp && pacman -Scc --noconfirm
 
 ADD PKGBUILD /home/user/
 RUN chown -R user /home/user
