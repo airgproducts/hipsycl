@@ -5,7 +5,7 @@ WORKDIR /home/user
 RUN pacman -Sy
 RUN pacman -S --noconfirm pacman clang llvm git cuda cmake boost --cachedir /tmp && pacman -Scc --noconfirm
 
-ADD hipsycl/cuda/PKGBUILD /home/user/
+ADD PKGBUILD /home/user/
 RUN chown -R user /home/user
 
 USER user
