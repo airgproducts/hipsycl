@@ -2,7 +2,7 @@
 # Maintainer: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=hipsycl-cuda-git
-pkgver=r1486.46d6b3c
+pkgver=r1847.d0d3d58a
 pkgrel=1
 pkgdesc="Implementation of SYCL 1.2.1 over AMD HIP/NVIDIA CUDA"
 arch=("x86_64")
@@ -32,7 +32,8 @@ build() {
     cmake .. -DCMAKE_BUILD_TYPE=Release \
           -DWITH_CPU_BACKEND=ON \
           -DWITH_CUDA_BACKEND=ON \
-          -DWITH_ROCM_BACKEND=OFF
+          -DWITH_ROCM_BACKEND=OFF \
+          -DCLANG_INCLUDE_PATH=/usr/include/clang
           #-DCMAKE_INSTALL_PREFIX=/opt/hipSYCL
 
     make
