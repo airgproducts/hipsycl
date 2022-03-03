@@ -2,7 +2,7 @@
 # Maintainer: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=hipsycl-cuda-git
-pkgver=r1847.d0d3d58a
+pkgver=r1756.3db975f
 pkgrel=1
 pkgdesc="Implementation of SYCL 1.2.1 over AMD HIP/NVIDIA CUDA"
 arch=("x86_64")
@@ -12,7 +12,16 @@ provides=(hipsycl hipsycl-cpu hipsycl-cuda sycl)
 makedepends=(cmake)
 depends=(cuda boost clang llvm)
 _pkgname=hipsycl
-source=("${_pkgname}::git+https://github.com/illuhad/hipSYCL.git")
+
+# 3db975ffc15d54ba536029c286f57e789f86b29c 
+# e38ed92163c575f85c9a32cfd2ae4b057010baf7 <- bad
+
+# 3db975f
+# e38ed92 <- bad
+# tag=v0.9.2
+
+#source=("${_pkgname}::git+https://github.com/illuhad/hipSYCL.git#tag=v0.9.2")
+source=("${_pkgname}::git+https://github.com/illuhad/hipSYCL.git#commit=3db975f")
 sha256sums=('SKIP')
 
 pkgver() {
